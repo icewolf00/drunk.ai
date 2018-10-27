@@ -1,15 +1,31 @@
 from flask import Flask, render_template, redirect, request
+from bot.facebook import Messenger
 import random
+# import keras
+# import tensorflow
 
 application = Flask(__name__)
 port = random.randrange(1000, 9999)
+messenger = Messenger
+# print(keras)
 
 @application.route("/")
 def index():
     return render_template(
         'index.html', 
         title = 'Drunk.AI',
+        messenger = 'keras'
         )
+
+@application.route("/webhook", methods=['POST', 'GET'])
+def webhook():
+        verify_code = 'webhook'
+        verify_token = request.args.get('hub.verify_token')
+        if verify_code == verify_token:
+            return request.args.get('hub.challenge')
+        else:
+            return 'False'
+
 
 @application.route("/index.html")
 def home():
