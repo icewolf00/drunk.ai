@@ -14,7 +14,7 @@ def index():
     return render_template(
         'index.html', 
         title = 'Drunk.AI',
-        messenger = keras,
+        messenger = 'OK',
         )
 
 @application.route("/webhook", methods=['POST', 'GET'])
