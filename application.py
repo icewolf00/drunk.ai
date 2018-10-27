@@ -1,20 +1,20 @@
 from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
 import random
-# import keras
+import keras
 # import tensorflow
 
 application = Flask(__name__)
 port = random.randrange(1000, 9999)
 messenger = Messenger
-# print(keras)
+print(keras)
 
 @application.route("/")
 def index():
     return render_template(
         'index.html', 
         title = 'Drunk.AI',
-        messenger = 'keras'
+        messenger = keras,
         )
 
 @application.route("/webhook", methods=['POST', 'GET'])
