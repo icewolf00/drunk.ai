@@ -23,12 +23,9 @@ def webhook():
         if verify_code == verify_token:
             return request.args.get('hub.challenge')
         else:
-            sender_id, img = messenger.get_message()
-            messenger.send_message(sender_id, text)
-            return render_template(
-                'data.html', 
-                img = img,
-                )
+            messenger.get_message()
+            return 'get message'
+            
 
 @application.route("/data.html")
 def data():
