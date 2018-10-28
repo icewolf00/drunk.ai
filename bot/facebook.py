@@ -16,10 +16,10 @@ class Messenger():
                 if messaging_event.get("message"):
                     sender_id = messaging_event["sender"]["id"]        
                     recipient_id = messaging_event["recipient"]["id"] 
-                    if messaging_event.get["message"]["text"]          
+                    if messaging_event.get["message"]["text"]:          
                         text = messaging_event["message"]["text"]  
                         return sender_id, text
-                    if messaging_event.get['message']['attachments'][0]['payload']['url']:                        
+                    if messaging_event.get['message']['attachments'][0]['payload']['url']:
                         img = messaging_event['message']['attachments'][0]['payload']['url']
                         return sender_id, img
                 else:
