@@ -5,6 +5,9 @@ import json
 
 class Messenger():
 
+    def __init__(self):
+        pass
+
     def get_message(self):
         data = request.get_json()
         print(data)
