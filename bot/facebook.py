@@ -2,7 +2,6 @@ from flask import request
 import requests
 import json
 
-
 class Messenger():
 
     def __init__(self):
@@ -29,10 +28,10 @@ class Messenger():
 
     def send_message(self, sender_id, text):
         access_token = 'EAADymmUJFN0BAGJ18T95ZAk6RY3gDUXYvKLIRE7GBxFoZA9yZCJ3YtQ6ajL94yEZBsdKtmoYZAoZCaLqpLp8ShpGNu2AsvrMIaGI1MZBY55ddyoPE6n667vfFZCMWDRIzZBrTcbEcmhrq6Vbvz5dvdOLghZCZANQFTCdZBh7HGqk7ICTvQZDZD'
-        r = requests.post("https://graph.facebook.com/v3.2/me/messages",
-            params={"access_token": access_token},
-            headers={"Content-Type": "application/json"}, 
-            data=json.dumps({
-            "recipient": {"id": sender_id},
-            "message": {"text": text}
+        requests.post("https://graph.facebook.com/v3.2/me/messages",
+        params={"access_token": access_token},
+        headers={"Content-Type": "application/json"}, 
+        data=json.dumps({
+        "recipient": {"id": sender_id},
+        "message": {"text": text}
     }))

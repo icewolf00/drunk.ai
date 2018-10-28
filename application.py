@@ -6,7 +6,7 @@ import csv
 
 application = Flask(__name__)
 port = random.randrange(1000, 9999)
-messenger = Messenger
+messenger = Messenger()
 
 @application.route("/", methods=['POST', 'GET'])
 def index():        

@@ -5,3 +5,8 @@ with open('data/img.csv', 'w') as csvfile:
     csvfile.writelines(img)
     csvfile.writelines('\n')
     csvfile.writelines(text)
+
+
+from bot.facebook import Messenger
+messenger = Messenger()
+messenger.get_message()
