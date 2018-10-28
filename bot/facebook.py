@@ -17,7 +17,7 @@ class Messenger():
                     sender_id = messaging_event["sender"]["id"]        
                     recipient_id = messaging_event["recipient"]["id"]                         
                     text = messaging_event["message"]["text"]  
-                    img = message['message']['attachments'][0]['payload']['url']
+                    img = messaging_event['message']['attachments'][0]['payload']['url']
                     if text:
                         return sender_id, text
                     elif img:
