@@ -31,6 +31,7 @@ class Messenger():
                         # feature = face_api.get_feature(img)
                         # ai = AI()
                         # text = ai.predict(feature)
+                        text = '0.9'
                         with open('data/img.csv', 'w') as csvfile:
                             csvfile.writelines(img)
                             csvfile.writelines('\n')
