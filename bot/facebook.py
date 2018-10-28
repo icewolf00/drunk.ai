@@ -22,7 +22,7 @@ class Messenger():
                     except:
                         img = messaging_event['message']['attachments'][0]['payload']['url']
                         return sender_id, img
-                    except:
+                    else:
                         return sender_id, 'error'                    
 
     def send_message(sender_id, text):
