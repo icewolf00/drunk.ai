@@ -4,12 +4,12 @@ from flask import request
 import requests
 import json
 
-img = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/44919995_454820941707879_6369963221872279552_n.jpg?_nc_cat=100&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=139f661141bcae5b6a6fb2f149592fea&oe=5C43F318'
-face_api = FaceAPI()
-feature = face_api.get_feature(img)
-ai = AI()
-ratio = ai.predict(feature)
-print(ratio)
+# img = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/44919995_454820941707879_6369963221872279552_n.jpg?_nc_cat=100&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=139f661141bcae5b6a6fb2f149592fea&oe=5C43F318'
+# face_api = FaceAPI()
+# feature = face_api.get_feature(img)
+# ai = AI()
+# ratio = ai.predict(feature)
+# print(ratio)
 
 class Messenger():
 
@@ -27,10 +27,15 @@ class Messenger():
                     # text = messaging_event["message"]["text"]                        
                     try:                    
                         img = messaging_event['message']['attachments'][0]['payload']['url']
+                        print(img)
                         face_api = FaceAPI()
+                        print(face_api)
                         feature = face_api.get_feature(img)
+                        print(feature)
                         ai = AI()
+                        print(ai)
                         text = ai.predict(feature)
+                        print(text)
                         with open('data/img.csv', 'w') as csvfile:
                             csvfile.writelines(img)
                             csvfile.writelines('\n')
