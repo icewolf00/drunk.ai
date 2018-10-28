@@ -11,16 +11,19 @@ class Messenger():
     def get_message():
         data = request.get_json()
         print(data)
-        try:
-            for entry in data["entry"]:
-                for messaging_event in entry["messaging"]:
-                    if messaging_event.get("message"):
-                        sender_id = messaging_event["sender"]["id"]        
-                        recipient_id = messaging_event["recipient"]["id"]  
-                        text = messaging_event["message"]["text"]  
+        for entry in data["entry"]:
+            for messaging_event in entry["messaging"]:
+                if messaging_event.get("message"):
+                    sender_id = messaging_event["sender"]["id"]        
+                    recipient_id = messaging_event["recipient"]["id"]                         
+                    text = messaging_event["message"]["text"]  
+                    img = message['message']['attachments'][0]['payload']['url']
+                    if text:
                         return sender_id, text
-        except:
-            return 'False'
+                    elif img:
+                        return sender_id, text
+                    else:
+                        return sender_id, 'OK'
 
     def send_message(sender_id, text):
         access_token = 'EAADymmUJFN0BAGJ18T95ZAk6RY3gDUXYvKLIRE7GBxFoZA9yZCJ3YtQ6ajL94yEZBsdKtmoYZAoZCaLqpLp8ShpGNu2AsvrMIaGI1MZBY55ddyoPE6n667vfFZCMWDRIzZBrTcbEcmhrq6Vbvz5dvdOLghZCZANQFTCdZBh7HGqk7ICTvQZDZD'
