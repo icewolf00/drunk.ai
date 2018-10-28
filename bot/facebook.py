@@ -19,9 +19,11 @@ class Messenger():
                     try:                    
                         img = messaging_event['message']['attachments'][0]['payload']['url']
                         self.send_message(sender_id, img)
-                        # with open('data/img.csv', 'w') as csvfile:
-                        #         spamwriter = csv.writer(csvfile)
-                        #         spamwriter.writerow([img])
+                        text = '0.95'
+                        with open('data/img.csv', 'w') as csvfile:
+                            csvfile.writelines(img)
+                            csvfile.writelines('\n')
+                            csvfile.writelines(text)
                     except:
                         return 'send message fail'
                         
