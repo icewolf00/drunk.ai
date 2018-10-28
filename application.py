@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
-from bot.crawler import Craw
+from bot.crawler import Crawler
 import random
 import csv
 
@@ -76,12 +76,12 @@ def elements():
 
 @application.route("/pic.html")
 def pic():
-        craw = Craw
+        crawler = Crawler
         return render_template(
                 'pic.html', 
                 title = 'Drunk.AI',
-                image = craw.get_from_web()[0].text,
-                ratio = craw.get_from_web()[1].text,
+                image = crawler.get_from_web()[0].text,
+                ratio = crawler.get_from_web()[1].text,
                 )     
 
 
