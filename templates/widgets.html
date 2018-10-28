@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="#"><span>Drunk</span>AI</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
@@ -83,28 +83,23 @@
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>
+			<img src="static/img/logo.png" height = "150" width = "150" style= "display:block; margin:auto;">
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
-		<form role="search">
+<!-- 		<form role="search">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
-		</form>
+		</form> -->
 		<ul class="nav menu">
-			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li class="active"><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Widgets</a></li>
-			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
-			<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
+			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> 儀錶板</a></li>
+			<li class="active"><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Google地圖</a></li>
+			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> 圖表</a></li>
+			<!-- <li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li> -->
+			<li><a href="pic.html"><em class="fa fa-clone">&nbsp;</em> 丟圖囉</a></li>
 			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+<!-- 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
@@ -118,8 +113,8 @@
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
 					</a></li>
 				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			</li> -->
+			<!-- <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li> -->
 		</ul>
 	</div><!--/.sidebar-->
 		
@@ -129,20 +124,46 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Widgets</li>
+				<li class="active">Google地圖</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Widgets</h1>
+				<h1 class="page-header">Google map</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-md-6">
+				<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBNX5cL-hNYP7o2efXdsm6-GRSYNErZ9PA&q=警察局&zoom=12&center=25.019,121.540360">
+   				 </iframe>
+   				<!-- <script>
+					var map;
+					function initMap() {
+						map = new google.maps.Map(document.getElementById('map'), {
+							center: { lat: 25.0335398, lng: 121.5620666 },
+							zoom: 16
+						});
+						var data = [
+							{
+								position : { lat: 25.033977, lng: 121.563998 },
+								map:map,
+								title:'小明的位置'
+							},
+				    		{
+								position : { lat: 25.034385, lng: 121.566047 },
+								map:map,
+								title:'大雄的位置'
+							}
+						];
+						for (var i= 0; data.length >i ; i++) {
+							var marker = new google.maps.Marker(data[i]);
+						}
+					}
+				  </script> -->
 				<div class="panel panel-default articles">
-					<div class="panel-heading">
+<!-- 					<div class="panel-heading">
 						Latest News
 						<ul class="pull-right panel-settings panel-button-tab-right">
 							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
@@ -216,7 +237,7 @@
 							</div>
 							<div class="clear"></div>
 						</div><!--End .article-->
-					</div>
+					</div> -->
 				</div><!--End .articles-->
 				
 				<div class="panel panel-default ">

@@ -1,11 +1,13 @@
 from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
 import random
-import keras
+# import keras
 
 application = Flask(__name__)
 port = random.randrange(1000, 9999)
 messenger = Messenger
+x = [i for i in range(10)]
+
 
 @application.route("/")
 def index():
@@ -13,7 +15,9 @@ def index():
         'index.html', 
         title = 'Drunk.AI',
         messenger = 'AWS',
+        x = x,
         )
+
 
 @application.route("/webhook", methods=['POST', 'GET'])
 def webhook():
@@ -46,6 +50,13 @@ def charts():
         title = 'Drunk.AI',
         )        
 
+@application.route("/pic.html")
+def pic():
+    return render_template(
+        'pic.html', 
+        title = 'Drunk.AI',
+        )     
+
 @application.route("/elements.html")
 def elements():
     return render_template(
@@ -60,12 +71,12 @@ def panels():
         title = 'Drunk.AI',
         )        
 
-@application.route("/login.html")
-def login():
-    return render_template(
-        'login.html', 
-        title = 'Drunk.AI',
-        )        
+# @application.route("/login.html")
+# def login():
+#     return render_template(
+#         'login.html', 
+#         title = 'Drunk.AI',
+#         )        
 
 
 @application.route("/query", methods=['POST', 'GET'])
@@ -76,4 +87,5 @@ def query():
         )
 
 if __name__ == "__main__":
-    application.run(debug=True, host='0.0.0.0', port=port)
+    # application.run(debug=True, host='0.0.0.0', port=port)
+    application.run(debug=True)

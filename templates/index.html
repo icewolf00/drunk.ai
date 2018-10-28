@@ -33,28 +33,24 @@
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="static/img/logo.png" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>
+			<img src="static/img/logo.png" height = "150" width = "150" style= "display:block; margin:auto;">
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
-		<form role="search">
+<!-- 		<form role="search">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
-		</form>
+		</form> -->
 		<ul class="nav menu">
-			<li class="active"><a href=""><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Widgets</a></li>
-			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
-			<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
+			<li class="active"><a href=""><em class="fa fa-dashboard">&nbsp;</em> 儀錶板</a></li>
+			<li><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Google地圖</a></li>
+			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> 圖表</a></li>
+			<!-- <li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li> -->
+			<li><a href="pic.html"><em class="fa fa-clone">&nbsp;</em> 丟圖囉</a></li>
 			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+			<!-- <li><a href="map.html"><em class="fa fa-clone">&nbsp;</em> Google map </a></li> -->
+<!-- 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
@@ -68,8 +64,8 @@
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
 					</a></li>
 				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			</li> -->
+			<!-- <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li> -->
 		</ul>
 	</div><!--/.sidebar-->
 		
@@ -79,14 +75,19 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Dashboard</li>
+				<li class="active">儀錶板</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">資料處理中心</h1>
+<!-- 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRakfqKS2l0vJd7w52yTrBtWooAesqgSKT529cczpXsV4ql_DHq7Q" alt=""> -->
+				<img >
 				<h1>{{ messenger }}</h1>
+<!-- 				{% for i in x %}
+					<h1>{{ i }}</h1>
+				{% endfor %} -->
 			</div>
 		</div><!--/.row-->
 		
@@ -94,33 +95,38 @@
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-shopping-cart color-blue"></em>
-							<div class="large">120</div>
-							<div class="text-muted">New Orders</div>
+						<div class="row no-padding"><em class="fa fa-xl fa fa-male color-blue"></em>
+							<!-- <div class="large">120</div> -->
+							<!-- <p><font >用戶總數</font></p> -->
+							<div class="text-primary">用戶總數</div>
+							<div class="large">2048</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-blue panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-comments color-orange"></em>
-							<div class="large">52</div>
-							<div class="text-muted">Comments</div>
+						<div class="row no-padding"><em class="fa fa-xl fa fa-car color-orange"></em>
+							<div class="text-warning">在線用戶</div>
+							<div class="large">512</div>
+							
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-orange panel-widget border-right">
-						<div class="row no-padding"><em class="fa fa-xl fa-users color-teal"></em>
-							<div class="large">24</div>
-							<div class="text-muted">New Users</div>
+						<div class="row no-padding"><em class="fa fa-xl fa-users color-red"></em>
+							<!-- <div class="large">24</div> -->
+							<div class="text-danger">異常駕駛</div>
+							<div class="large">200</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-red panel-widget ">
-						<div class="row no-padding"><em class="fa fa-xl fa-search color-red"></em>
+						<div class="row no-padding"><em class="fa fa-xl fa fa-refresh color-green"></em>
+							<!-- <div class="large">25.2k</div> -->
+							<div class="text-dark">累計酒駕罰金</div>
 							<div class="large">25.2k</div>
-							<div class="text-muted">Page Views</div>
 						</div>
 					</div>
 				</div>
@@ -130,7 +136,7 @@
 			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Site Traffic Overview
+						用戶概況
 						<ul class="pull-right panel-settings panel-button-tab-right">
 							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
 								<em class="fa fa-cogs"></em>
@@ -263,7 +269,7 @@
 						</span></div>
 					</div>
 				</div>
-				<div class="panel panel-default">
+<!-- 				<div class="panel panel-default">
 					<div class="panel-heading">
 						To-do List
 						<ul class="pull-right panel-settings panel-button-tab-right">
@@ -354,7 +360,7 @@
 								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
 						</span></div>
 					</div>
-				</div>
+				</div> -->
 			</div><!--/.col-->
 			
 			
