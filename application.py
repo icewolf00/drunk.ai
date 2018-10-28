@@ -1,13 +1,16 @@
 from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
+from bot.crawler import Craw
 import random
+import requests
+from bs4 import BeautifulSoup
+import re
 # import keras
 
 application = Flask(__name__)
 port = random.randrange(1000, 9999)
 messenger = Messenger
-x = [i for i in range(10)]
-
+craw = Craw
 
 @application.route("/")
 def index():
@@ -15,7 +18,6 @@ def index():
         'index.html', 
         title = 'Drunk.AI',
         messenger = 'AWS',
-        x = x,
         )
 
 
@@ -36,10 +38,10 @@ def home():
         title = 'Drunk.AI',
         )
 
-@application.route("/widgets.html")
-def widgets():
+@application.route("/map.html")
+def map():
     return render_template(
-        'widgets.html', 
+        'map.html', 
         title = 'Drunk.AI',
         )
 
@@ -55,14 +57,10 @@ def pic():
     return render_template(
         'pic.html', 
         title = 'Drunk.AI',
+        image = craw.get_from_web()[0].text,
+        ratio = craw.get_from_web()[1].text,
         )     
 
-@application.route("/elements.html")
-def elements():
-    return render_template(
-        'elements.html', 
-        title = 'Drunk.AI',
-        )        
 
 @application.route("/panels.html")
 def panels():
@@ -71,12 +69,6 @@ def panels():
         title = 'Drunk.AI',
         )        
 
-# @application.route("/login.html")
-# def login():
-#     return render_template(
-#         'login.html', 
-#         title = 'Drunk.AI',
-#         )        
 
 
 @application.route("/query", methods=['POST', 'GET'])

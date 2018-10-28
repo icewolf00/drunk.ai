@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Panels</title>
+	<title>Lumino - Widgets</title>
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static/css/font-awesome.min.css" rel="stylesheet">
 	<link href="static/css/datepicker3.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="#"><span>Drunk</span>AI</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
@@ -83,28 +83,23 @@
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>
+			<img src="static/img/logo.png" height = "150" width = "150" style= "display:block; margin:auto;">
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
-		<form role="search">
+<!-- 		<form role="search">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
-		</form>
+		</form> -->
 		<ul class="nav menu">
-			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Widgets</a></li>
-			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
-			<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
-			<li class="active"><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> 儀錶板</a></li>
+			<li class="active"><a href="map.html"><em class="fa fa-calendar">&nbsp;</em> Google地圖</a></li>
+			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> 圖表</a></li>
+			<!-- <li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li> -->
+			<li><a href="pic.html"><em class="fa fa-clone">&nbsp;</em> 送入圖片</a></li>
+			<!-- <li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li> -->
+<!-- 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
@@ -118,8 +113,8 @@
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
 					</a></li>
 				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			</li> -->
+			<!-- <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li> -->
 		</ul>
 	</div><!--/.sidebar-->
 		
@@ -129,253 +124,311 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Panels</li>
+				<li class="active">Google地圖</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Alerts &amp; Panels</h1>
+				<h1 class="page-header">Google map</h1>
+				<!-- <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/45057861_278873262746859_4196420830466408448_n.png?_nc_cat=105&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=13746ddf81a6d36165e6d222b025df93&oe=5C480332"> -->
 			</div>
 		</div><!--/.row-->
+
+		<div class="row">
+			<div class="col-md-6">
+
+				<div id="map" style="width:100%;height:600px"></div>
+
+					<script>
+					function myMap() {
+					var mapCanvas = document.getElementById("map");
+					var myCenter = new google.maps.LatLng(25.019312, 121.540433); 
+					var mapOptions = {center: myCenter, zoom: 15};
+					var map = new google.maps.Map(mapCanvas,mapOptions);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.014426, 121.534507),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.013444, 121.535566),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.011324, 121.536950),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.012375, 121.538538),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.013619, 121.540040),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.016448, 121.543645),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.020435, 121.544994),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.021177, 121.541191),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.021737, 121.538364),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.022180, 121.537331),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.022229, 121.534605),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.020839, 121.534155),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.018535, 121.533694),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					}
+					</script>
+
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAp-xrODbktEesCca5swPD4ZlfDGZ6fuk&callback=myMap"></script>
+
 				
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h2>Alerts</h2>
-				<div class="alert bg-primary" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-				<div class="alert bg-info" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-				<div class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-				<div class="alert bg-success" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-				<div class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-				<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Welcome to the admin dashboard panel bootstrap template <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-			</div>
-		</div><!--/.row-->		
-		
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h2>Basic Panels</h2>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">Default Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Primary Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-success">
-					<div class="panel-heading">Success Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-		</div><!-- /.row -->
-			
-		<div class="row">
-			<div class="col-md-4">
-				<div class="panel panel-info">
-					<div class="panel-heading">Info Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-warning">
-					<div class="panel-heading">Warning Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-danger">
-					<div class="panel-heading">Danger Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-		</div><!-- /.row -->
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h2>Collapsible Panels</h2>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">Default Panel
-						<span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Primary Panel
-						<span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-success">
-					<div class="panel-heading">Success Panel
-						<span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-		</div><!-- /.row -->
-			
-		<div class="row">
-			<div class="col-md-4">
-				<div class="panel panel-info">
-					<div class="panel-heading">Info Panel
-						<span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-warning">
-					<div class="panel-heading">Warning Panel
-						<span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-danger">
-					<div class="panel-heading">Danger Panel
-						<span class="pull-right clickable panel-toggle"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div>
-		</div><!-- /.row -->
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<h2>Tab Panels</h2>
-			</div>
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-body tabs">
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tab1" data-toggle="tab">Tab 1</a></li>
-							<li><a href="#tab2" data-toggle="tab">Tab 2</a></li>
-							<li><a href="#tab3" data-toggle="tab">Tab 3</a></li>
+
+				</div><!--End .articles-->
+				
+<!-- 				<div class="panel panel-default ">
+					<div class="panel-heading">
+						Progress bars
+						<ul class="pull-right panel-settings panel-button-tab-right">
+							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+								<em class="fa fa-cogs"></em>
+							</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li>
+										<ul class="dropdown-settings">
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 1
+											</a></li>
+											<li class="divider"></li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 2
+											</a></li>
+											<li class="divider"></li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 3
+											</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
 						</ul>
-						<div class="tab-content">
-							<div class="tab-pane fade in active" id="tab1">
-								<h4>Tab 1</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
+						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+					<div class="panel-body">
+						<div class="col-md-12 no-padding">
+							<div class="row progress-labels">
+								<div class="col-sm-6">New Orders</div>
+								<div class="col-sm-6" style="text-align: right;">80%</div>
 							</div>
-							<div class="tab-pane fade" id="tab2">
-								<h4>Tab 2</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
+							<div class="progress">
+								<div data-percentage="0%" style="width: 80%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
-							<div class="tab-pane fade" id="tab3">
-								<h4>Tab 3</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
+							<div class="row progress-labels">
+								<div class="col-sm-6">Comments</div>
+								<div class="col-sm-6" style="text-align: right;">60%</div>
+							</div>
+							<div class="progress">
+								<div data-percentage="0%" style="width: 60%;" class="progress-bar progress-bar-orange" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+							<div class="row progress-labels">
+								<div class="col-sm-6">New Users</div>
+								<div class="col-sm-6" style="text-align: right;">40%</div>
+							</div>
+							<div class="progress">
+								<div data-percentage="0%" style="width: 40%;" class="progress-bar progress-bar-teal" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+							<div class="row progress-labels">
+								<div class="col-sm-6">Page Views</div>
+								<div class="col-sm-6" style="text-align: right;">20%</div>
+							</div>
+							<div class="progress">
+								<div data-percentage="0%" style="width: 20%;" class="progress-bar progress-bar-red" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</div>
 					</div>
-				</div><!--/.panel-->
-			</div><!--/.col-->
-			
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-body tabs">
-						<ul class="nav nav-pills">
-							<li class="active"><a href="#pilltab1" data-toggle="tab">Tab 1</a></li>
-							<li><a href="#pilltab2" data-toggle="tab">Tab 2</a></li>
-							<li><a href="#pilltab3" data-toggle="tab">Tab 3</a></li>
+				</div> -->
+				<!-- <div class="panel panel-default">
+					<div class="panel-heading">
+						To-do List
+						<ul class="pull-right panel-settings panel-button-tab-right">
+							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+								<em class="fa fa-cogs"></em>
+							</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li>
+										<ul class="dropdown-settings">
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 1
+											</a></li>
+											<li class="divider"></li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 2
+											</a></li>
+											<li class="divider"></li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 3
+											</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
 						</ul>
-						<div class="tab-content">
-							<div class="tab-pane fade in active" id="pilltab1">
-								<h4>Tab 1</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
-							</div>
-							<div class="tab-pane fade" id="pilltab2">
-								<h4>Tab 2</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
-							</div>
-							<div class="tab-pane fade" id="pilltab3">
-								<h4>Tab 3</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget rutrum purus. Donec hendrerit ante ac metus sagittis elementum. Mauris feugiat nisl sit amet neque luctus, a tincidunt odio auctor.</p>
-							</div>
-						</div>
+						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+					<div class="panel-body">
+						<ul class="todo-list">
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox-1" />
+									<label for="checkbox-1">Make coffee</label>
+								</div>
+								<div class="pull-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+							</li>
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox-2" />
+									<label for="checkbox-2">Check emails</label>
+								</div>
+								<div class="pull-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+							</li>
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox-3" />
+									<label for="checkbox-3">Reply to Jane</label>
+								</div>
+								<div class="pull-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+							</li>
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox-4" />
+									<label for="checkbox-4">Make more coffee</label>
+								</div>
+								<div class="pull-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+							</li>
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox-5" />
+									<label for="checkbox-5">Work on the new design</label>
+								</div>
+								<div class="pull-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+							</li>
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox-6" />
+									<label for="checkbox-6">Get feedback on design</label>
+								</div>
+								<div class="pull-right action-buttons"><a href="#" class="trash"><em class="fa fa-trash"></em></a></div>
+							</li>
+						</ul>
 					</div>
-				</div><!--/.panel-->
-			</div><!-- /.col-->
-		</div><!-- /.row -->
+					<div class="panel-footer">
+						<div class="input-group">
+							<input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task" /><span class="input-group-btn">
+								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
+						</span></div>
+					</div>
+				</div> -->
+				<!-- <div class="panel panel-default chat">
+					<div class="panel-heading">
+						Chat
+						<ul class="pull-right panel-settings panel-button-tab-right">
+							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+								<em class="fa fa-cogs"></em>
+							</a>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li>
+										<ul class="dropdown-settings">
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 1
+											</a></li>
+											<li class="divider"></li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 2
+											</a></li>
+											<li class="divider"></li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 3
+											</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+					<div class="panel-body">
+						<ul>
+							<li class="left clearfix"><span class="chat-img pull-left">
+								<img src="http://placehold.it/60/30a5ff/fff" alt="User Avatar" class="img-circle" />
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header"><strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small></div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+								</div>
+							</li>
+							<li class="right clearfix"><span class="chat-img pull-right">
+								<img src="http://placehold.it/60/dde0e6/5f6468" alt="User Avatar" class="img-circle" />
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header"><strong class="pull-left primary-font">Jane Doe</strong> <small class="text-muted">6 mins ago</small></div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+								</div>
+							</li>
+							<li class="left clearfix"><span class="chat-img pull-left">
+								<img src="http://placehold.it/60/30a5ff/fff" alt="User Avatar" class="img-circle" />
+								</span>
+								<div class="chat-body clearfix">
+									<div class="header"><strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small></div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="panel-footer">
+						<div class="input-group">
+							<input id="btn-input" type="text" class="form-control input-md" placeholder="Type your message here..." /><span class="input-group-btn">
+								<button class="btn btn-primary btn-md" id="btn-chat">Send</button>
+						</span></div>
+					</div>
+				</div> -->
+			</div><!--/.col-->
 		
-		<div class="row">
-			<div class="col-lg-12">
-				<h2>Color Panels</h2>
-			</div>
-			<div class="col-md-6">
-				<div class="panel panel-teal">
-					<div class="panel-heading dark-overlay">Teal Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div><!--/.col-->
-			
-			<div class="col-md-6">
-				<div class="panel panel-blue">
-					<div class="panel-heading dark-overlay">Blue Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div><!--/.col-->
-			
-			<div class="col-md-6">
-				<div class="panel panel-orange">
-					<div class="panel-heading dark-overlay">Orange Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div><!--/.col-->
-			
-			<div class="col-md-6">
-				<div class="panel panel-red">
-					<div class="panel-heading dark-overlay">Red Panel</div>
-					<div class="panel-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut ante in sapien blandit luctus sed ut lacus. Phasellus urna est, faucibus nec ultrices placerat, feugiat et ligula. Donec vestibulum magna a dui pharetra molestie. Fusce et dui urna.</p>
-					</div>
-				</div>
-			</div><!--/.col-->
-			<div class="col-sm-12">
-				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-			</div>
 		</div><!--/.row-->
-	</div><!--/.main-->
-	
-		<script src="static/js/jquery-1.11.1.min.js"></script>
+	</div>	<!--/.main-->
+	  
+
+<script src="static/js/jquery-1.11.1.min.js"></script>
 	<script src="static/js/bootstrap.min.js"></script>
 	<script src="static/js/chart.min.js"></script>
 	<script src="static/js/chart-data.js"></script>
