@@ -27,15 +27,10 @@ class Messenger():
                     # text = messaging_event["message"]["text"]                        
                     try:                    
                         img = messaging_event['message']['attachments'][0]['payload']['url']
-                        print(img)
                         face_api = FaceAPI()
-                        print(face_api)
                         feature = face_api.get_feature(img)
-                        print(feature)
                         ai = AI()
-                        print(ai)
                         text = ai.predict(feature)
-                        print(text)
                         with open('data/img.csv', 'w') as csvfile:
                             csvfile.writelines(img)
                             csvfile.writelines('\n')
