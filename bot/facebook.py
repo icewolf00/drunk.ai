@@ -20,9 +20,11 @@ class Messenger():
                         text = messaging_event["message"]["text"]  
                         return sender_id, text
                     except:
+                        return sender_id, 'error'
+                    try:
                         img = messaging_event['message']['attachments'][0]['payload']['url']
                         return sender_id, img
-                    else:
+                    except:
                         return sender_id, 'error'                    
 
     def send_message(sender_id, text):
