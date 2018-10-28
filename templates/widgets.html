@@ -136,32 +136,25 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBNX5cL-hNYP7o2efXdsm6-GRSYNErZ9PA&q=警察局&zoom=12&center=25.019,121.540360">
-   				 </iframe>
-   				<!-- <script>
-					var map;
-					function initMap() {
-						map = new google.maps.Map(document.getElementById('map'), {
-							center: { lat: 25.0335398, lng: 121.5620666 },
-							zoom: 16
-						});
-						var data = [
-							{
-								position : { lat: 25.033977, lng: 121.563998 },
-								map:map,
-								title:'小明的位置'
-							},
-				    		{
-								position : { lat: 25.034385, lng: 121.566047 },
-								map:map,
-								title:'大雄的位置'
-							}
-						];
-						for (var i= 0; data.length >i ; i++) {
-							var marker = new google.maps.Marker(data[i]);
-						}
+				<div id="map" style="width:100%;height:600px"></div>
+
+					<script>
+					function myMap() {
+					var mapCanvas = document.getElementById("map");
+					var myCenter = new google.maps.LatLng(25.019312, 121.540433); 
+					var mapOptions = {center: myCenter, zoom: 13};
+					var map = new google.maps.Map(mapCanvas,mapOptions);
+					var marker = new google.maps.Marker({
+						position: myCenter,
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					
 					}
-				  </script> -->
+					</script>
+
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAp-xrODbktEesCca5swPD4ZlfDGZ6fuk&callback=myMap"></script>
+
 				<div class="panel panel-default articles">
 <!-- 					<div class="panel-heading">
 						Latest News
