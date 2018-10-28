@@ -23,30 +23,11 @@ class Messenger():
             return 'False'
 
     def send_message(sender_id, text):
-        post_message_url = 'https://graph.facebook.com/v3.2/me/messages?access_token=EAADymmUJFN0BAAlZCTYsNVvUCNHQ2wUJGcVD0ctugsWP9EUFrG6kJk2LfpZBMAJp8gxkyUYNq64KFsDbRXHEYbZCZBA4u9ABpUkP5o5lMwqFLhArc8V1hXiigRVN9rwZAZBHTpHI9ZBZB3HeD1r0C45h76B1GRDvXQmOx6L2O7XikwZDZD'
-        response_message = json.dumps({
-            "recipient": {
-                "id": sender_id
-            },
-            "message": {
-                'attachment':{
-                    'type':'template',
-                    'payload':{
-                        "template_type":"button",
-                        "text": text,
-                        "buttons":[
-                            {
-                                "type":"web_url",
-                                "url": 'url',
-                                "title": 'title',
-                            },
-                        ]
-                    }
-                }
-            }
-        })
-        status = requests.post(
-            post_message_url,
-            headers = {"Content-Type": "application/json"},
-            data = response_message)
-        print(status.json())
+        access_token = 'EAADymmUJFN0BAGJ18T95ZAk6RY3gDUXYvKLIRE7GBxFoZA9yZCJ3YtQ6ajL94yEZBsdKtmoYZAoZCaLqpLp8ShpGNu2AsvrMIaGI1MZBY55ddyoPE6n667vfFZCMWDRIzZBrTcbEcmhrq6Vbvz5dvdOLghZCZANQFTCdZBh7HGqk7ICTvQZDZD'
+        r = requests.post("https://graph.facebook.com/v3.2/me/messages",
+            params={"access_token": access_token},
+            headers={"Content-Type": "application/json"}, 
+            data=json.dumps({
+            "recipient": {"id": sender_id},
+            "message": {"text": text}
+    }))
