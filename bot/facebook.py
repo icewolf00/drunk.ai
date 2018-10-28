@@ -16,14 +16,15 @@ class Messenger():
                 if messaging_event.get("message"):
                     sender_id = messaging_event["sender"]["id"]        
                     recipient_id = messaging_event["recipient"]["id"] 
-                    try:                        
+                    if messaging_event.get["message"]["text"]          
                         text = messaging_event["message"]["text"]  
                         return sender_id, text
-                    try:
+                    if messaging_event.get['message']['attachments'][0]['payload']['url']:                        
                         img = messaging_event['message']['attachments'][0]['payload']['url']
                         return sender_id, img
                 else:
-                    return sender_id, 'OK'
+                    return sender_id, 'error'
+                    
 
     def send_message(sender_id, text):
         access_token = 'EAADymmUJFN0BAGJ18T95ZAk6RY3gDUXYvKLIRE7GBxFoZA9yZCJ3YtQ6ajL94yEZBsdKtmoYZAoZCaLqpLp8ShpGNu2AsvrMIaGI1MZBY55ddyoPE6n667vfFZCMWDRIzZBrTcbEcmhrq6Vbvz5dvdOLghZCZANQFTCdZBh7HGqk7ICTvQZDZD'
