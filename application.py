@@ -18,7 +18,7 @@ def index():
 @application.route("/webhook", methods=['POST'])
 def webhook():
         recipient_id, text = messenger.get_message()
-        messenger(recipient_id, text)
+        messenger.send_message(recipient_id, text)
         verify_code = 'webhook'
         verify_token = request.args.get('hub.verify_token')
         if verify_code == verify_token:
