@@ -28,10 +28,10 @@ def webhook():
                         message_text = messaging_event["message"]["text"]  
                         print(message_text)
                         # send_message(sender_id, 'test', 'test', 'test')
-                        return True
+                        return 'True'
         except:
             print(data)
-            return False        
+            return 'False'
         verify_code = 'webhook'
         verify_token = request.args.get('hub.verify_token')
         if verify_code == verify_token:
