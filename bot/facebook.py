@@ -16,6 +16,9 @@ class Messenger():
                     # text = messaging_event["message"]["text"]                        
                     try:                    
                         img = messaging_event['message']['attachments'][0]['payload']['url']
+                        with open('data/img.csv', 'w') as csvfile:
+                                spamwriter = csv.writer(csvfile)
+                                spamwriter.writerow([img])
                         return sender_id, img
                     except:
                         return sender_id, 'error'                    

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
 import random
+import csv
 # import keras
 
 application = Flask(__name__)
@@ -28,6 +29,19 @@ def webhook():
                 'data.html', 
                 img = img,
                 )
+
+@application.route("/data.html")
+def data():
+        data_list = list()
+        with open('data/img.csv', newline='') as csvfile:                        
+                rows = csv.reader(csvfile)
+                for row in rows:
+                    data_list.append(row[0])
+        return render_template(
+        'data.html', 
+        img = data_list[0],
+        text = data_list[1],
+        )
 
 @application.route("/index.html")
 def home():
