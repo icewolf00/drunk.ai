@@ -18,7 +18,7 @@ class Messenger():
                         sender_id = messaging_event["sender"]["id"]        
                         recipient_id = messaging_event["recipient"]["id"]  
                         text = messaging_event["message"]["text"]  
-                        return recipient_id, text
+                        return sender_id, text
         except:
             return 'False'
 
