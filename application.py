@@ -12,7 +12,6 @@ def index():
         return render_template(
                 'index.html', 
                 title = 'Drunk.AI',
-                messenger = 'AWS',
                 )
 
 @application.route("/webhook", methods=['POST', 'GET'])
@@ -41,7 +40,7 @@ def data():
         )
 
 @application.route("/index.html")
-def home():
+def home():        
         return render_template(
                 'index.html', 
                 title = 'Drunk.AI',
@@ -53,12 +52,13 @@ def widgets():
                 'widgets.html', 
                 title = 'Drunk.AI',
                 )
+
 @application.route("/map.html")
 def map():
-    return render_template(
-        'map.html', 
-        title = 'Drunk.AI',
-        )
+        return render_template(
+                'map.html', 
+                title = 'Drunk.AI',
+                )
 
 @application.route("/charts.html")
 def charts():
