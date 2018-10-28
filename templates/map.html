@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="#"><span>Drunk</span>AI</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
@@ -83,28 +83,23 @@
 	</nav>
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
-			<div class="profile-userpic">
-				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
-			</div>
-			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Username</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
-			</div>
+			<img src="static/img/logo.png" height = "150" width = "150" style= "display:block; margin:auto;">
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
-		<form role="search">
+<!-- 		<form role="search">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
-		</form>
+		</form> -->
 		<ul class="nav menu">
-			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li class="active"><a href="widgets.html"><em class="fa fa-calendar">&nbsp;</em> Widgets</a></li>
-			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
-			<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
-			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> 儀錶板</a></li>
+			<li class="active"><a href="map.html"><em class="fa fa-calendar">&nbsp;</em> Google地圖</a></li>
+			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> 圖表</a></li>
+			<!-- <li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li> -->
+			<li><a href="pic.html"><em class="fa fa-clone">&nbsp;</em> 送入圖片</a></li>
+			<!-- <li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li> -->
+<!-- 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
@@ -118,8 +113,8 @@
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
 					</a></li>
 				</ul>
-			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			</li> -->
+			<!-- <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li> -->
 		</ul>
 	</div><!--/.sidebar-->
 		
@@ -129,97 +124,103 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Widgets</li>
+				<li class="active">Google地圖</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Widgets</h1>
+				<h1 class="page-header">Google map</h1>
+				<!-- <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/45057861_278873262746859_4196420830466408448_n.png?_nc_cat=105&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=13746ddf81a6d36165e6d222b025df93&oe=5C480332"> -->
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-md-6">
-				<div class="panel panel-default articles">
-					<div class="panel-heading">
-						Latest News
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
-							</a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li>
-										<ul class="dropdown-settings">
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 1
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 2
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 3
-											</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body articles-container">
-						<div class="article border-bottom">
-							<div class="col-xs-12">
-								<div class="row">
-									<div class="col-xs-2 col-md-2 date">
-										<div class="large">30</div>
-										<div class="text-muted">Jun</div>
-									</div>
-									<div class="col-xs-10 col-md-10">
-										<h4><a href="#">Lorem ipsum dolor sit amet</a></h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div><!--End .article-->
-						
-						<div class="article border-bottom">
-							<div class="col-xs-12">
-								<div class="row">
-									<div class="col-xs-2 col-md-2 date">
-										<div class="large">28</div>
-										<div class="text-muted">Jun</div>
-									</div>
-									<div class="col-xs-10 col-md-10">
-										<h4><a href="#">Lorem ipsum dolor sit amet</a></h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div><!--End .article-->
-						
-						<div class="article">
-							<div class="col-xs-12">
-								<div class="row">
-									<div class="col-xs-2 col-md-2 date">
-										<div class="large">24</div>
-										<div class="text-muted">Jun</div>
-									</div>
-									<div class="col-xs-10 col-md-10">
-										<h4><a href="#">Lorem ipsum dolor sit amet</a></h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div><!--End .article-->
-					</div>
+
+				<div id="map" style="width:100%;height:600px"></div>
+
+					<script>
+					function myMap() {
+					var mapCanvas = document.getElementById("map");
+					var myCenter = new google.maps.LatLng(25.019312, 121.540433); 
+					var mapOptions = {center: myCenter, zoom: 15};
+					var map = new google.maps.Map(mapCanvas,mapOptions);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.014426, 121.534507),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.013444, 121.535566),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.011324, 121.536950),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.012375, 121.538538),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.013619, 121.540040),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.016448, 121.543645),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.020435, 121.544994),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.021177, 121.541191),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.021737, 121.538364),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.022180, 121.537331),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.022229, 121.534605),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.020839, 121.534155),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(25.018535, 121.533694),
+						animation: google.maps.Animation.BOUNCE
+					});
+					marker.setMap(map);
+					}
+					</script>
+
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAp-xrODbktEesCca5swPD4ZlfDGZ6fuk&callback=myMap"></script>
+
+				
+
 				</div><!--End .articles-->
 				
-				<div class="panel panel-default ">
+<!-- 				<div class="panel panel-default ">
 					<div class="panel-heading">
 						Progress bars
 						<ul class="pull-right panel-settings panel-button-tab-right">
@@ -278,8 +279,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="panel panel-default">
+				</div> -->
+				<!-- <div class="panel panel-default">
 					<div class="panel-heading">
 						To-do List
 						<ul class="pull-right panel-settings panel-button-tab-right">
@@ -358,8 +359,8 @@
 								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
 						</span></div>
 					</div>
-				</div>
-				<div class="panel panel-default chat">
+				</div> -->
+				<!-- <div class="panel panel-default chat">
 					<div class="panel-heading">
 						Chat
 						<ul class="pull-right panel-settings panel-button-tab-right">
@@ -420,185 +421,9 @@
 								<button class="btn btn-primary btn-md" id="btn-chat">Send</button>
 						</span></div>
 					</div>
-				</div>
+				</div> -->
 			</div><!--/.col-->
-			
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Calendar
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
-							</a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li>
-										<ul class="dropdown-settings">
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 1
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 2
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 3
-											</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<div id="calendar"></div>
-					</div>
-				</div>
-				<div class="panel panel-default ">
-					<div class="panel-heading">
-						Timeline
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
-							</a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li>
-										<ul class="dropdown-settings">
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 1
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 2
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 3
-											</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body timeline-container">
-						<ul class="timeline">
-							<li>
-								<div class="timeline-badge"><i class="glyphicon glyphicon-pushpin"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
-									</div>
-									<div class="timeline-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="timeline-badge primary"><i class="glyphicon glyphicon-link"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
-									</div>
-									<div class="timeline-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="timeline-badge"><i class="glyphicon glyphicon-camera"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
-									</div>
-									<div class="timeline-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at sodales nisl. Donec malesuada orci ornare risus finibus feugiat.</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="timeline-badge"><i class="glyphicon glyphicon-paperclip"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-										<h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
-									</div>
-									<div class="timeline-body">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Contact Form
-						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
-								<em class="fa fa-cogs"></em>
-							</a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li>
-										<ul class="dropdown-settings">
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 1
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 2
-											</a></li>
-											<li class="divider"></li>
-											<li><a href="#">
-												<em class="fa fa-cog"></em> Settings 3
-											</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
-					<div class="panel-body">
-						<form class="form-horizontal" action="" method="post">
-							<fieldset>
-								<!-- Name input-->
-								<div class="form-group">
-									<label class="col-md-3 control-label" for="name">Name</label>
-									<div class="col-md-9">
-										<input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-									</div>
-								</div>
-							
-								<!-- Email input-->
-								<div class="form-group">
-									<label class="col-md-3 control-label" for="email">Your E-mail</label>
-									<div class="col-md-9">
-										<input id="email" name="email" type="text" placeholder="Your email" class="form-control">
-									</div>
-								</div>
-								
-								<!-- Message body -->
-								<div class="form-group">
-									<label class="col-md-3 control-label" for="message">Your message</label>
-									<div class="col-md-9">
-										<textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-									</div>
-								</div>
-								
-								<!-- Form actions -->
-								<div class="form-group">
-									<div class="col-md-12 widget-right">
-										<button type="submit" class="btn btn-default btn-md pull-right">Submit</button>
-									</div>
-								</div>
-							</fieldset>
-						</form>
-					</div>
-				</div>
-			</div><!--/.col-->
-			<div class="col-sm-12">
-				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-			</div>
+		
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 	  

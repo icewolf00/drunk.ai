@@ -1,12 +1,11 @@
 from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
+from bot.crawler import Craw
 import random
 import csv
 
 application = Flask(__name__)
-port = random.randrange(1000, 9999)
-messenger = Messenger()
-
+# port = random.randrange(1000, 9999)
 
 @application.route("/", methods=['POST', 'GET'])
 def index():        
@@ -16,13 +15,14 @@ def index():
                 messenger = 'AWS',
                 )
 
-@application.route("/webhook", methods=['POST'])
+@application.route("/webhook", methods=['POST', 'GET'])
 def webhook():
         verify_code = 'webhook'
         verify_token = request.args.get('hub.verify_token')
         if verify_code == verify_token:
             return request.args.get('hub.challenge')
         else:
+            messenger = Messenger()
             messenger.get_message()
             return 'get message'
             
@@ -53,6 +53,12 @@ def widgets():
                 'widgets.html', 
                 title = 'Drunk.AI',
                 )
+@application.route("/map.html")
+def map():
+    return render_template(
+        'map.html', 
+        title = 'Drunk.AI',
+        )
 
 @application.route("/charts.html")
 def charts():
@@ -68,27 +74,25 @@ def elements():
                 title = 'Drunk.AI',
                 )        
 
+@application.route("/pic.html")
+def pic():
+        craw = Craw
+        return render_template(
+                'pic.html', 
+                title = 'Drunk.AI',
+                image = craw.get_from_web()[0].text,
+                ratio = craw.get_from_web()[1].text,
+                )     
+
+
 @application.route("/panels.html")
 def panels():
         return render_template(
                 'panels.html', 
-                title = 'Drunk.AI',
+                title = 'Drunk.AI',                
                 )        
 
-@application.route("/login.html")
-def login():
-        return render_template(
-                'login.html', 
-                title = 'Drunk.AI',
-                )        
-
-
-@application.route("/query", methods=['POST', 'GET'])
-def query():
-        return render_template(
-                'index.html', 
-                title = 'Drunk.AI'
-                )
 
 if __name__ == "__main__":
-    application.run(debug=True, host='0.0.0.0', port=port)
+    # application.run(debug=True, host='0.0.0.0', port=port)
+    application.run(debug=True)
