@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
 import random
 import csv
-# import keras
 
 application = Flask(__name__)
 port = random.randrange(1000, 9999)

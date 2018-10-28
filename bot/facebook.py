@@ -1,6 +1,16 @@
+from ai import AI
+from microsoft import FaceAPI
 from flask import request
 import requests
 import json
+
+# img = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/44919995_454820941707879_6369963221872279552_n.jpg?_nc_cat=100&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=139f661141bcae5b6a6fb2f149592fea&oe=5C43F318'
+# face_api = FaceAPI()
+# feature = face_api.get_feature(img)
+# ai = AI()
+# ratio = ai.predict(feature)
+# print(ratio)
+
 
 class Messenger():
 
@@ -9,7 +19,7 @@ class Messenger():
 
     def get_message(self):
         data = request.get_json()
-        print(data)
+        # print(data)
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
                 if messaging_event.get("message"):
@@ -18,12 +28,15 @@ class Messenger():
                     # text = messaging_event["message"]["text"]                        
                     try:                    
                         img = messaging_event['message']['attachments'][0]['payload']['url']
-                        self.send_message(sender_id, img)
-                        text = '0.95'
+                        face_api = FaceAPI()
+                        feature = face_api.get_feature(img)
+                        ai = AI()
+                        text = ai.predict(feature)
                         with open('data/img.csv', 'w') as csvfile:
                             csvfile.writelines(img)
                             csvfile.writelines('\n')
                             csvfile.writelines(text)
+                        self.send_message(sender_id, text)
                     except:
                         return 'send message fail'
                         
