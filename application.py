@@ -27,7 +27,7 @@ def webhook():
                         recipient_id = messaging_event["recipient"]["id"]  
                         message_text = messaging_event["message"]["text"]  
                         print(message_text)
-                        # send_message(sender_id, 'test', 'test', 'test')
+                        send_message(sender_id, 'test', 'test', 'test')
                         return 'True'
         except:
             print(data)
