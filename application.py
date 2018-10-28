@@ -17,14 +17,17 @@ def index():
 
 @application.route("/webhook", methods=['POST'])
 def webhook():
-        sender_id, text = messenger.get_message()
-        messenger.send_message(sender_id, text)
         verify_code = 'webhook'
         verify_token = request.args.get('hub.verify_token')
         if verify_code == verify_token:
             return request.args.get('hub.challenge')
         else:
-            return 'False'
+            sender_id, text = messenger.get_message()
+            messenger.send_message(sender_id, text)
+            return render_template(
+                'data.html', 
+                img = img,
+                )
 
 @application.route("/index.html")
 def home():

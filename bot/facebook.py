@@ -5,9 +5,6 @@ import json
 
 class Messenger():
 
-    def test():
-        return 'Hello World!'
-
     def get_message():
         data = request.get_json()
         print(data)
@@ -19,12 +16,10 @@ class Messenger():
                     try:
                         text = messaging_event["message"]["text"]  
                         return sender_id, text
-                    except:
-                        return sender_id, 'error'
-                    try:
+                    except:                    
                         img = messaging_event['message']['attachments'][0]['payload']['url']
                         return sender_id, img
-                    except:
+                    else:
                         return sender_id, 'error'                    
 
     def send_message(sender_id, text):
