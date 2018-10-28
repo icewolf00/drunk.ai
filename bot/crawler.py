@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 class Crawler():
+	
 	def get_from_web():
 		url = 'https://drunk-ai.herokuapp.com/data.html'
 		resp = requests.get(url)
