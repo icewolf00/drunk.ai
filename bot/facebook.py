@@ -20,6 +20,8 @@ class Messenger():
                         # with open('data/img.csv', 'w') as csvfile:
                         #         spamwriter = csv.writer(csvfile)
                         #         spamwriter.writerow([img])
+                    except:
+                        return 'send message fail'
                         
 
     def send_message(self, sender_id, text):
