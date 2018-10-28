@@ -1,13 +1,13 @@
 from flask import Flask, render_template, redirect, request
 from bot.facebook import Messenger
 import random
-import keras
+# import keras
 
 application = Flask(__name__)
 port = random.randrange(1000, 9999)
 messenger = Messenger
 
-@application.route("/")
+@application.route("/", methods=['POST', 'GET'])
 def index():
     return render_template(
         'index.html', 
@@ -17,6 +17,7 @@ def index():
 
 @application.route("/webhook", methods=['POST', 'GET'])
 def webhook():
+        messenger.get_message()
         verify_code = 'webhook'
         verify_token = request.args.get('hub.verify_token')
         if verify_code == verify_token:

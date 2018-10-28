@@ -1,8 +1,23 @@
+from flask import request
+
 class Messenger():
 
     def test():
         return 'Hello World!'
 
+    def get_message():
+        data = request.get_json()
+        if data["object"] == "page":
+            for entry in data["entry"]:
+                for messaging_event in entry["messaging"]:
+                    if messaging_event.get("message"):  
+
+                        sender_id = messaging_event["sender"]["id"]        
+                        recipient_id = messaging_event["recipient"]["id"]  
+                        message_text = messaging_event["message"]["text"]  
+                        print(message_text)
+                        # send_message_response(sender_id, parse_user_message(message_text)) 
+    
     def get(self, request, *args, **kwargs):
         verify_code = 'webhook'
         verify_token = request.GET.get('hub.verify_token')
@@ -24,39 +39,7 @@ class Messenger():
                 try:
                     if message.get('message'):
                         try:
-                            face = Face
-                            keras = Keras
-                            # email = Email
-                            img_url0 = 'https://scontent-ort2-2.xx.fbcdn.net/v/t1.15752-9/31131203_776020582588623_6646175892982726656_n.jpg?_nc_cat=0&_nc_ad=z-m&_nc_cid=0&oh=1ed2e2290fd43fd2e79dfde19650d59e&oe=5B705AB4'
                             img_url = message['message']['attachments'][0]['payload']['url']
-                            # is_same = face.is_same(img_url0, img_url)
-                            # if is_same:
-                            #     identity = True
-                            # else:
-                            #     identity = False
-                            face_feature = face.get_feature(img_url)
-                            output_list = face.choose_feature(face_feature)
-                            score = float(keras.predict(output_list)[0, 0])
-                            score = round(score, 2)
-                            with open('html.csv', 'w') as csvfile:
-                                spamwriter = csv.writer(csvfile)
-                                spamwriter.writerow([score])
-                            # if identity == True:
-                            #     identity_str = 'Danny'
-                            # else:
-                            #     identity_str = 'Unknown'
-                            #     button = 'Unknown'
-                                # email.send('[Warning] Driver identity is unknown.', img_url)
-                            if score >= 0.9:
-                                status = False
-                                button = 'Drunk'
-                                # email.send('[Warning] Driver status is disabled.', img_url)
-                            else:
-                                status = True
-                                button = 'Normal'
-                            score = str(score * 100)
-                            score = score[:-2]
-                            output = 'Drunk Detect: %s%%' % (score)
                             post_facebook_message(sender_id, output, img_url, button) 
                         except:
                             text = message['message']['text']
