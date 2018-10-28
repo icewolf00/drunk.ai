@@ -1,8 +1,10 @@
 absl-py==0.6.1
 astor==0.7.1
 awsebcli==3.14.6
+beautifulsoup4==4.6.3
 blessed==1.15.0
 botocore==1.12.31
+bs4==0.0.1
 cached-property==1.5.1
 cement==2.8.2
 certifi==2018.10.15
