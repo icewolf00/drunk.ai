@@ -15,9 +15,23 @@ def index():
         messenger = 'AWS',
         )
 
-@application.route("/webhook", methods=['POST', 'GET'])
+@application.route("/webhook", methods=['POST'])
 def webhook():
-        messenger.get_message()
+        # messenger.get_message()
+        data = request.get_json()
+        try:
+            for entry in data["entry"]:
+                for messaging_event in entry["messaging"]:
+                    if messaging_event.get("message"):
+                        sender_id = messaging_event["sender"]["id"]        
+                        recipient_id = messaging_event["recipient"]["id"]  
+                        message_text = messaging_event["message"]["text"]  
+                        print(message_text)
+                        # send_message(sender_id, 'test', 'test', 'test')
+                        return True
+        except:
+            print(data)
+            return False        
         verify_code = 'webhook'
         verify_token = request.args.get('hub.verify_token')
         if verify_code == verify_token:
