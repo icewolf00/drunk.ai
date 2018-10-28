@@ -7,15 +7,17 @@ class Messenger():
 
     def get_message():
         data = request.get_json()
-        print(data)
-        for entry in data["entry"]:
-            for messaging_event in entry["messaging"]:
-                if messaging_event.get("message"):
-                    sender_id = messaging_event["sender"]["id"]        
-                    recipient_id = messaging_event["recipient"]["id"]  
-                    message_text = messaging_event["message"]["text"]  
-                    print(message_text)
-                    # send_message(sender_id, 'test', 'test', 'test')
+        try:
+            for entry in data["entry"]:
+                for messaging_event in entry["messaging"]:
+                    if messaging_event.get("message"):
+                        sender_id = messaging_event["sender"]["id"]        
+                        recipient_id = messaging_event["recipient"]["id"]  
+                        message_text = messaging_event["message"]["text"]  
+                        print(message_text)
+                        # send_message(sender_id, 'test', 'test', 'test')
+        except:
+            print(data)
 
 def send_message(sender_id, text, url, title):
     #post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAD6HcWbZAcEBAB1XGWqOZCh4N2LHdbl9G9yNDiOXjEqhIXtYzZAg8FyqxkUVtRnZBDiiWjxvUM1nlWjF6EwQuxUbhQN1XwSm26n11F9KQKNHZBTZCoAkqfnw4g3YFXMXM8ZCKpYZCKra5VExv5KO0zMhgshhfajMZBdNzeZBZBMZBeReAZDZD'
