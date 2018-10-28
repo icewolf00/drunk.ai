@@ -7,16 +7,16 @@ class Messenger():
 
     def get_message():
         data = request.get_json()
-        if data["object"] == "page":
-            for entry in data["entry"]:
-                for messaging_event in entry["messaging"]:
-                    if messaging_event.get("message"):  
+        print(data)
+        for entry in data["entry"]:
+            for messaging_event in entry["messaging"]:
+                if messaging_event.get("message"):  
 
-                        sender_id = messaging_event["sender"]["id"]        
-                        recipient_id = messaging_event["recipient"]["id"]  
-                        message_text = messaging_event["message"]["text"]  
-                        print(message_text)
-                        # send_message_response(sender_id, parse_user_message(message_text)) 
+                    sender_id = messaging_event["sender"]["id"]        
+                    recipient_id = messaging_event["recipient"]["id"]  
+                    message_text = messaging_event["message"]["text"]  
+                    print(message_text)
+                    # send_message_response(sender_id, parse_user_message(message_text)) 
     
     def get(self, request, *args, **kwargs):
         verify_code = 'webhook'
