@@ -27,22 +27,20 @@ class Messenger():
                     # text = messaging_event["message"]["text"]                        
                     try:                    
                         img = messaging_event['message']['attachments'][0]['payload']['url']
-                        face_api = FaceAPI()
-                        feature = face_api.get_feature(img)
-                        ai = AI()
-                        text = ai.predict(feature)
+                        try:
+                            face_api = FaceAPI()
+                            feature = face_api.get_feature(img)
+                            ai = AI()
+                            text = ai.predict(feature)
+                        except:
+                            text = '0'
                         with open('data/img.csv', 'w') as csvfile:
                             csvfile.writelines(img)
                             csvfile.writelines('\n')
                             csvfile.writelines(text)
                         self.send_message(sender_id, text)
                     except:
-                        img = messaging_event['message']['attachments'][0]['payload']['url']
-                        text = '0'
-                        with open('data/img.csv', 'w') as csvfile:
-                            csvfile.writelines(img)
-                            csvfile.writelines('\n')
-                            csvfile.writelines(text)
+                        text = 'Please upload the photo.'
                         self.send_message(sender_id, text)
 
     def send_message(self, sender_id, text):
