@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Panels</title>
+	<title>{{ title }}</title>
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
 	<link href="static/css/font-awesome.min.css" rel="stylesheet">
 	<link href="static/css/datepicker3.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Drunk</span>AI</a>
+				<a class="navbar-brand" href="/"><span>Drunk</span>AI</a>
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
@@ -34,63 +34,30 @@
 			<div class="clear"></div>
 		</div>
 		<div class="divider"></div>
-<!-- 		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-		</form> -->
 		<ul class="nav menu">
-			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> 儀錶板</a></li>
-			<li><a href="map.html"><em class="fa fa-calendar">&nbsp;</em> Google地圖</a></li>
-			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> 圖表</a></li>
-			<!-- <li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li> -->
-			<li><a href="pic.html"><em class="fa fa-clone">&nbsp;</em> 送入圖片</a></li>
-			<li class="active"><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-<!-- 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
-					</a></li>
-					<li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-					</a></li>
-				</ul>
-			</li> -->
-			<!-- <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li> -->
+			<li><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em>首頁</a></li>
+			<li><a href="pic.html"><em class="fa fa-search">&nbsp;	</em>酒駕檢測</a></li>
+			<li><a href="map.html"><em class="fa fa-taxi">&nbsp;</em>車輛分佈</a></li>
+			<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em>數據分析</a></li>
+			<li class="active"><a href="panels.html"><em class="fa fa-power-off">&nbsp;</em>系統簡介</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
-			<ol class="breadcrumb">
-				<li><a href="#">
-					<em class="fa fa-home"></em>
-				</a></li>
-				<li class="active">Alerts &amp; Panels</li>
-			</ol>
-		</div><!--/.row-->
-		
+			<div class="col-lg-12">
+				<h1 class="page-header text-center">系統簡介</h1>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Alerts &amp; Panels</h1>
+			<div id = "box1" class="alert bg-info" role="alert"><em class="fa fa-lg fa-thumbs-up">&nbsp;</em> 0.0 < ratio <= 0.2（安全駕駛）<a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+			<div id = "box2" class="alert bg-teal" role="alert"><em class="fa fa-lg fa-thumbs-o-up">&nbsp;</em> 0.2 < ratio <= 0.4（正常駕駛）<a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+			<div id = "box3" class="alert bg-success" role="alert"><em class="fa fa-lg fa-thumbs-down">&nbsp;</em> 0.4 < ratio <= 0.6（低風險駕駛） <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+			<div id = "box4" class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> 0.6 < ratio <= 0.8（高風險駕駛）<a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
+			<div id = "box5" class="alert bg-danger" role="alert"><em class="fa fa-lg fa-times">&nbsp;</em> 0.8 < ratio <= 1.0（危險駕駛）<a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
 			</div>
-		</div><!--/.row-->
-				
-		
-		<div class="row">
-			<div class="col-lg-12">
-			<div id = "box1" class="alert bg-info" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> 0 < ratio < 0.2 <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-			<div id = "box2" class="alert bg-teal" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> 0.2 < ratio < 0.4 <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-			<div id = "box3" class="alert bg-success" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> 0.4 < ratio < 0.6 <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-			<div id = "box4" class="alert bg-warning" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> 0.6 < ratio < 0.8 <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-			<div id = "box5" class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> 0.8 < ratio < 1 <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
-			</div>
-		</div><!--/.row-->		
+		</div>		
 		
 	</div><!--/.main-->
 	

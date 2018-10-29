@@ -5,7 +5,7 @@ import random
 import csv
 
 application = Flask(__name__)
-# port = random.randrange(1000, 9999)
+port = random.randrange(1000, 9999)
 
 @application.route("/", methods=['POST', 'GET'])
 def index():        
@@ -76,12 +76,16 @@ def elements():
 
 @application.route("/pic.html")
 def pic():
-        crawler = Crawler
+        crawler = Crawler()
+        image = crawler.get_from_web()[0].text
+        ratio = crawler.get_from_web()[1].text
+        text = '檢驗結果：' + str(ratio)
         return render_template(
                 'pic.html', 
                 title = 'Drunk.AI',
-                image = crawler.get_from_web()[0].text,
-                ratio = crawler.get_from_web()[1].text,
+                image = image,
+                ratio = ratio,
+                text = text,
                 )     
 
 
@@ -94,5 +98,5 @@ def panels():
 
 
 if __name__ == "__main__":
-    # application.run(debug=True, host='0.0.0.0', port=port)
-    application.run(debug=True)
+    application.run(debug=True, host='0.0.0.0', port=port)
+#     application.run(debug=True)
