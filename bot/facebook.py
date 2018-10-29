@@ -37,7 +37,13 @@ class Messenger():
                             csvfile.writelines(text)
                         self.send_message(sender_id, text)
                     except:
-                        return 'send message fail'             
+                        img = messaging_event['message']['attachments'][0]['payload']['url']
+                        text = '0'
+                        with open('data/img.csv', 'w') as csvfile:
+                            csvfile.writelines(img)
+                            csvfile.writelines('\n')
+                            csvfile.writelines(text)
+                        self.send_message(sender_id, text)
 
     def send_message(self, sender_id, text):
         access_token = 'EAADymmUJFN0BAGJ18T95ZAk6RY3gDUXYvKLIRE7GBxFoZA9yZCJ3YtQ6ajL94yEZBsdKtmoYZAoZCaLqpLp8ShpGNu2AsvrMIaGI1MZBY55ddyoPE6n667vfFZCMWDRIzZBrTcbEcmhrq6Vbvz5dvdOLghZCZANQFTCdZBh7HGqk7ICTvQZDZD'
